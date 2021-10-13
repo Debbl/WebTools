@@ -15,16 +15,19 @@ function EncodeBase64() {
       <div className="base64-items">
         <div className="base64-item base64-left">
           {utf8Input.length ?
+            <>
             <Button type="primary"
                     onClick={() => {
                       copy(utf8Input)
                       message.info("复制成功！", .3)
-                    }}>复制</Button> : null}
-          <i className="del-icon"
+                    }}>复制</Button>
+            <i className="del-icon"
              onClick={() => {
               setUtf8Input("")
               setBase64Input("")
              }}>&#xe674;</i>
+            </> : null}
+
           <textarea value={utf8Input}
                     placeholder="Hello World"
                     onChange={(e) => {
@@ -36,16 +39,19 @@ function EncodeBase64() {
         </div>
         <div className="base64-item base64-right">
           {utf8Input.length ?
+            <>
             <Button type="primary"
                     onClick={() => {
                       copy(base64Input)
                       message.info("复制成功！", .3)
-                    }}>复制</Button> : null}
-          <i className="del-icon"
+                    }}>复制</Button>
+            <i className="del-icon"
              onClick={() => {
               setBase64Input("")
               setUtf8Input("")
              }}>&#xe674;</i>
+            </> : null}
+
           <textarea value={base64Input}
                     placeholder="SGVsbG8gV29ybGQ="
                     onChange={(e) => {
