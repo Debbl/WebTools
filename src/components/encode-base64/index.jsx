@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import copy from 'copy-to-clipboard'
 import { Button, message } from 'antd'
 
 import { EncodeBase64Wrapper } from './encode-base64.styled'
@@ -14,75 +13,94 @@ function EncodeBase64() {
       <div className="base64-title">Base64编码、解码</div>
       <div className="base64-items">
         <div className="base64-item base64-left">
-          {utf8Input.length ?
+          {
+          utf8Input.length ?
             <>
+            {/* 复制按钮 */}
             <Button type="primary"
                     className="copy-btn"
                     onClick={() => {
-                      copy(utf8Input)
-                      message.info("复制成功！", .3)
+                      navigator.clipboard.writeText(utf8Input).then(_ => {
+                        message.success("复制成功！", .3)
+                      }).catch(() => {
+                        message.error("失败，请检查浏览器设置！", .3)
+                      })
                     }}>复制</Button>
+            {/* 清除图标 */}
             <i className="del-icon"
              onClick={() => {
               setUtf8Input("")
               setBase64Input("")
              }}>&#xe674;</i>
-            </> : null}
+            </> : null
+          }
           {/* 粘贴按钮 */}
           <Button type="primary"
                   className="paste-btn paste-btn-left"
-                  onClick={(e) => {
-                    navigator.clipboard.readText().then(
-                    clipText => {
-                      const tpmStr = utf8Input + clipText
+                  onClick={() => {
+                    navigator.clipboard.readText().then(clipText => {
+                      message.success("已粘贴剪切板内容！", .3)
+                      const tpmStr = clipText
                       setUtf8Input(tpmStr)
                       setBase64Input(base64Encode(tpmStr))
-                    });
+                    }).catch(() => {
+                      message.error("失败，请检查浏览器设置！", .3)
+                    })
                     }}>粘贴</Button>
           {/* 文本输入 */}
           <textarea value={utf8Input}
                     placeholder="Hello World"
                     onChange={(e) => {
-                      e.preventDefault()
                       setUtf8Input(e.target.value)
                       setBase64Input(base64Encode(e.target.value))
                     }} />
+          {/* 基数显示 */}
           <span className="show-num">{utf8Input.length}</span>
         </div>
+
         <div className="base64-item base64-right">
-          {utf8Input.length ?
+          {
+          utf8Input.length ?
             <>
+            {/* 复制按钮 */}
             <Button type="primary"
                     className="copy-btn"
                     onClick={() => {
-                      copy(base64Input)
-                      message.info("复制成功！", .3)
+                      navigator.clipboard.writeText(base64Input).then(_ => {
+                        message.success("复制成功！", .3)
+                      }).catch(() => {
+                        message.error("失败，请检查浏览器设置！", .3)
+                      })
                     }}>复制</Button>
+            {/* 清除图标 */}
             <i className="del-icon"
              onClick={() => {
               setBase64Input("")
               setUtf8Input("")
              }}>&#xe674;</i>
-            </> : null}
-
+            </> : null
+          }
           {/* 粘贴按钮 */}
           <Button type="primary"
                   className="paste-btn paste-btn-right"
-                  onClick={(e) => {
-                    navigator.clipboard.readText().then(
-                    clipText => {
-                      const tpmStr = base64Input + clipText
+                  onClick={() => {
+                    navigator.clipboard.readText().then(clipText => {
+                      message.success("已粘贴剪切板内容！", .3)
+                      const tpmStr = clipText
                       setBase64Input(tpmStr)
                       setUtf8Input(base64Decode(tpmStr))
+                    }).catch(() => {
+                      message.error("失败，请检查浏览器设置！", .3)
                     })
                   }}>粘贴</Button>
-
+          {/* 文本输入 */}
           <textarea value={base64Input}
                     placeholder="SGVsbG8gV29ybGQ="
                     onChange={(e) => {
                       setBase64Input(e.target.value)
                       setUtf8Input(base64Decode(e.target.value))
                     }} />
+          {/* 计数显示 */}
           <span className="show-num">{base64Input.length}</span>
         </div>
       </div>
