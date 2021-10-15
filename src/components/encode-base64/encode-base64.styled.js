@@ -20,11 +20,24 @@ const EncodeBase64Wrapper = styled.div`
     .base64-item {
       position: relative;
 
-      button {
+      .copy-btn {
         position: absolute;
-        bottom: 10px;
+        bottom: 16px;
         right: 13px;
         padding: 0 8px;
+      }
+
+      .paste-btn {
+        position: absolute;
+      }
+      .paste-btn-left {
+        bottom: -30px;
+        left: 0;
+      }
+
+      .paste-btn-right {
+        bottom: -30px;
+        left: 0;
       }
 
       .del-icon {

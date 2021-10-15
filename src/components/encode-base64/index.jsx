@@ -17,6 +17,7 @@ function EncodeBase64() {
           {utf8Input.length ?
             <>
             <Button type="primary"
+                    className="copy-btn"
                     onClick={() => {
                       copy(utf8Input)
                       message.info("复制成功！", .3)
@@ -27,7 +28,18 @@ function EncodeBase64() {
               setBase64Input("")
              }}>&#xe674;</i>
             </> : null}
-
+          {/* 粘贴按钮 */}
+          <Button type="primary"
+                  className="paste-btn paste-btn-left"
+                  onClick={(e) => {
+                    navigator.clipboard.readText().then(
+                    clipText => {
+                      const tpmStr = utf8Input + clipText
+                      setUtf8Input(tpmStr)
+                      setBase64Input(base64Encode(tpmStr))
+                    });
+                    }}>粘贴</Button>
+          {/* 文本输入 */}
           <textarea value={utf8Input}
                     placeholder="Hello World"
                     onChange={(e) => {
@@ -41,6 +53,7 @@ function EncodeBase64() {
           {utf8Input.length ?
             <>
             <Button type="primary"
+                    className="copy-btn"
                     onClick={() => {
                       copy(base64Input)
                       message.info("复制成功！", .3)
@@ -51,6 +64,18 @@ function EncodeBase64() {
               setUtf8Input("")
              }}>&#xe674;</i>
             </> : null}
+
+          {/* 粘贴按钮 */}
+          <Button type="primary"
+                  className="paste-btn paste-btn-right"
+                  onClick={(e) => {
+                    navigator.clipboard.readText().then(
+                    clipText => {
+                      const tpmStr = base64Input + clipText
+                      setBase64Input(tpmStr)
+                      setUtf8Input(base64Decode(tpmStr))
+                    })
+                  }}>粘贴</Button>
 
           <textarea value={base64Input}
                     placeholder="SGVsbG8gV29ybGQ="
