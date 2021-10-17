@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const EncodeBase64Wrapper = styled.div`
   display: flex;
   height: 100vh;
+  min-width: 300px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -82,6 +83,23 @@ const EncodeBase64Wrapper = styled.div`
         bottom: -16px;
         right: 3px;
         font-size: 16px;
+      }
+    }
+  }
+
+  // 手机端适配
+  @media screen and (max-width: 630px) {
+    & {
+      .base64-title {
+        margin-bottom: 10px;
+      }
+      .base64-items {
+        flex-direction: column;
+
+        .base64-right {
+          margin-left: 0;
+          margin-top: 36px;
+        }
       }
     }
   }
