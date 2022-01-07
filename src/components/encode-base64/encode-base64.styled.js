@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const EncodeBase64Wrapper = styled.div`
   display: flex;
@@ -103,8 +103,8 @@ const EncodeBase64Wrapper = styled.div`
       }
     }
   }
-`
+`;
 
 export {
-  EncodeBase64Wrapper
-}
+  EncodeBase64Wrapper,
+};

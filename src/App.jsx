@@ -1,13 +1,13 @@
-import './assets/css/App.css'
+import './assets/css/App.css';
 
-import Home from './pages/home'
+import Home from './pages/home';
 
 function App() {
   return (
     <div className="App">
       <Home />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
