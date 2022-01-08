@@ -421,6 +421,18 @@ babel-plugin-syntax-jsx@^6.18.0:
   resolved "https://registry.npmjs.org/babel-plugin-syntax-jsx/-/babel-plugin-syntax-jsx-6.18.0.tgz"
   integrity sha1-CvMqmm4Tyno/1QaeYtew9Y0NiUY=
 
+base32-decode@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/base32-decode/download/base32-decode-1.0.0.tgz#2a821d6a664890c872f20aa9aca95a4b4b80e2a7"
+  integrity sha1-KoIdamZIkMhy8gqprKlaS0uA4qc=
+
+base32-encode@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.nlark.com/base32-encode/download/base32-encode-2.0.0.tgz#f029bea7d1db2ecc95df5c1d0a6038a39354029a"
+  integrity sha1-8Cm+p9HbLsyV31wdCmA4o5NUApo=
+  dependencies:
+    to-data-view "^2.0.0"
+
 browserslist@^4.16.6:
   version "4.17.3"
   resolved "https://registry.npmjs.org/browserslist/-/browserslist-4.17.3.tgz"
@@ -1276,6 +1288,11 @@ supports-color@^5.3.0, supports-color@^5.5.0:
   integrity sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
   dependencies:
     has-flag "^3.0.0"
+
+to-data-view@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.nlark.com/to-data-view/download/to-data-view-2.0.0.tgz#4cc3f5c9eb59514a7436fc54c587c3c34c9b1d60"
+  integrity sha1-TMP1yetZUUp0NvxUxYfDw0ybHWA=
 
 to-fast-properties@^2.0.0:
   version "2.0.0"

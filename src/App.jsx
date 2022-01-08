@@ -1,12 +1,33 @@
-import './assets/css/App.css';
-
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {
+  base32Encode,
+  base32Decode,
+  base64Encode,
+  base64Decode
+} from '@/utils/base-transform';
+import Base from './pages/base';
 import Home from './pages/home';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route
+            path="base32"
+            element={
+              <Base baseEncode={base32Encode} baseDecode={base32Decode} />
+            }
+          />
+          <Route
+            path="base64"
+            element={
+              <Base baseEncode={base64Encode} baseDecode={base64Decode} />
+            }
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

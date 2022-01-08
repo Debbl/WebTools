@@ -1,17 +1,13 @@
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import {HomeWrapper} from './home.styled';
-import EncodeBase64 from '@/components/encode-base64';
+import React from 'react';
+import { Outlet, Link } from 'react-router-dom';
 
 function Home() {
   return (
-    <HomeWrapper>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<EncodeBase64 />} />
-          <Route path="base64" element={<EncodeBase64 />} />
-        </Routes>
-      </BrowserRouter>
-    </HomeWrapper>
+    <>
+      <Link to="/base32">base32</Link>
+      <Link to="/base64">base64</Link>
+      <Outlet />
+    </>
   );
 }
 
