@@ -8,8 +8,9 @@ const BaseToolWrapper = styled.div`
   justify-content: center;
 
   .base-title {
-    font-size: 30px;
+    font-size: 40px;
     margin-bottom: 30px;
+    font-weight: 700;
   }
 
   .base-container {

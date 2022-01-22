@@ -31,4 +31,5 @@ function base32Encode(base32Str) {
 function base32Decode(str) {
   return String.fromCharCode.apply(null, new Uint8Array(base32De(str, 'RFC4648')));
 }
+
 export {base64Encode, base64Decode, base32Encode, base32Decode};
