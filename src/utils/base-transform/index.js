@@ -12,7 +12,7 @@ function base64Decode(str) {
   } catch (e) {
     return '格式错误！';
   }
-}  6
+}
 
 // base32 编码
 function base32Encode(base32Str) {

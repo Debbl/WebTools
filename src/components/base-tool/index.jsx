@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import React, {useState} from 'react';
+import {useLocation} from 'react-router-dom';
 import {BaseToolWrapper} from './base-tool.styled';
 import BaseItem from './base-item';
 
-function BaseTool({ baseEncode, baseDecode }) {
+function BaseTool({baseEncode, baseDecode}) {
   const [inputStr, setInputStr] = useState('');
   const [inputBaseStr, setInputBaseStr] = useState('');
   const location = useLocation();
@@ -17,7 +17,7 @@ function BaseTool({ baseEncode, baseDecode }) {
           setOwnStr={setInputStr}
           setOtherStr={setInputBaseStr}
           baseFunc={baseEncode}
-          tipStr={"Hello"}
+          tipStr={'Hello'}
         />
         <BaseItem
           ownStr={inputBaseStr}

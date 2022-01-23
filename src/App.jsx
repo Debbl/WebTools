@@ -16,13 +16,21 @@ function App() {
           <Route
             path="base32"
             element={
-              <Base baseEncode={base32Encode} baseDecode={base32Decode} />
+              <Base
+                key="base32"
+                baseEncode={base32Encode}
+                baseDecode={base32Decode}
+              />
             }
           />
           <Route
             path="base64"
             element={
-              <Base baseEncode={base64Encode} baseDecode={base64Decode} />
+              <Base
+                key="base64"
+                baseEncode={base64Encode}
+                baseDecode={base64Decode}
+              />
             }
           />
         </Route>
