@@ -13,45 +13,53 @@ function EncodeBase64() {
       <div className="base64-title">Base64编码、解码</div>
       <div className="base64-items">
         <div className="base64-item base64-left">
-          {utf8Input.length ? (<>
-                {/* 复制按钮 */}
-                <Button
-                  type="primary"
-                  className="copy-btn"
-                  onClick={() => {
-                    navigator.clipboard.writeText(utf8Input).then((_) => {
+          {utf8Input.length ? (
+            <>
+              {/* 复制按钮 */}
+              <Button
+                type="primary"
+                className="copy-btn"
+                onClick={() => {
+                  navigator.clipboard
+                    .writeText(utf8Input)
+                    .then((_) => {
                       message.success('复制成功！', 0.3);
-                    }).catch(() => {
+                    })
+                    .catch(() => {
                       message.error('失败，请检查浏览器设置！', 0.3);
                     });
-                  }}
-                >
-                  复制
-                </Button>
-                {/* 清除图标 */}
-                <i
-                  className="del-icon"
-                  onClick={() => {
-                    setUtf8Input('');
-                    setBase64Input('');
-                  }}
-                >
-                  &#xe674;
-                </i>
-              </>) : null}
+                }}
+              >
+                复制
+              </Button>
+              {/* 清除图标 */}
+              <i
+                className="del-icon"
+                onClick={() => {
+                  setUtf8Input('');
+                  setBase64Input('');
+                }}
+              >
+                &#xe674;
+              </i>
+            </>
+          ) : null}
           {/* 粘贴按钮 */}
           <Button
             type="primary"
             className="paste-btn paste-btn-left"
             onClick={() => {
-              navigator.clipboard.readText().then((clipText) => {
-                message.success('已粘贴剪切板内容！', 0.3);
-                const tpmStr = clipText;
-                setUtf8Input(tpmStr);
-                setBase64Input(base64Encode(tpmStr));
-              }).catch(() => {
-                message.error('失败，请检查浏览器设置！', 0.3);
-              });
+              navigator.clipboard
+                .readText()
+                .then((clipText) => {
+                  message.success('已粘贴剪切板内容！', 0.3);
+                  const tpmStr = clipText;
+                  setUtf8Input(tpmStr);
+                  setBase64Input(base64Encode(tpmStr));
+                })
+                .catch(() => {
+                  message.error('失败，请检查浏览器设置！', 0.3);
+                });
             }}
           >
             粘贴
@@ -70,45 +78,53 @@ function EncodeBase64() {
         </div>
 
         <div className="base64-item base64-right">
-          {utf8Input.length ? (<>
-                {/* 复制按钮 */}
-                <Button
-                  type="primary"
-                  className="copy-btn"
-                  onClick={() => {
-                    navigator.clipboard.writeText(base64Input).then(() => {
+          {utf8Input.length ? (
+            <>
+              {/* 复制按钮 */}
+              <Button
+                type="primary"
+                className="copy-btn"
+                onClick={() => {
+                  navigator.clipboard
+                    .writeText(base64Input)
+                    .then(() => {
                       message.success('复制成功！', 0.3);
-                    }).catch(() => {
+                    })
+                    .catch(() => {
                       message.error('失败，请检查浏览器设置！', 0.3);
                     });
-                  }}
-                >
-                  复制
-                </Button>
-                {/* 清除图标 */}
-                <i
-                  className="del-icon"
-                  onClick={() => {
-                    setBase64Input('');
-                    setUtf8Input('');
-                  }}
-                >
-                  &#xe674;
-                </i>
-              </>) : null}
+                }}
+              >
+                复制
+              </Button>
+              {/* 清除图标 */}
+              <i
+                className="del-icon"
+                onClick={() => {
+                  setBase64Input('');
+                  setUtf8Input('');
+                }}
+              >
+                &#xe674;
+              </i>
+            </>
+          ) : null}
           {/* 粘贴按钮 */}
           <Button
             type="primary"
             className="paste-btn paste-btn-right"
             onClick={() => {
-              navigator.clipboard.readText().then((clipText) => {
-                message.success('已粘贴剪切板内容！', 0.3);
-                const tpmStr = clipText;
-                setBase64Input(tpmStr);
-                setUtf8Input(base64Decode(tpmStr));
-              }).catch(() => {
-                message.error('失败，请检查浏览器设置！', 0.3);
-              });
+              navigator.clipboard
+                .readText()
+                .then((clipText) => {
+                  message.success('已粘贴剪切板内容！', 0.3);
+                  const tpmStr = clipText;
+                  setBase64Input(tpmStr);
+                  setUtf8Input(base64Decode(tpmStr));
+                })
+                .catch(() => {
+                  message.error('失败，请检查浏览器设置！', 0.3);
+                });
             }}
           >
             粘贴

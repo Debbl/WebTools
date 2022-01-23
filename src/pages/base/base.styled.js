@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-const BaseWrapper = styled.div`
+const BaseWrapper = styled.div``;
 
-`;
-
-export {
-  BaseWrapper,
-};
+export { BaseWrapper };

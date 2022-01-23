@@ -52,4 +52,4 @@ const BaseItemWrapper = styled.div`
   }
 `;
 
-export {BaseItemWrapper};
+export { BaseItemWrapper };

@@ -1,8 +1,8 @@
 import React from 'react';
-import {Button, message} from 'antd';
-import {BaseItemWrapper} from './base-item.styled';
+import { Button, message } from 'antd';
+import { BaseItemWrapper } from './base-item.styled';
 
-function BaseItem({ownStr, setOwnStr, setOtherStr, baseFunc, tipStr}) {
+function BaseItem({ ownStr, setOwnStr, setOtherStr, baseFunc, tipStr }) {
   return (
     <BaseItemWrapper>
       {ownStr.length ? (

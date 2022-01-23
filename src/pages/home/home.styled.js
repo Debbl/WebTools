@@ -7,4 +7,4 @@ const HomeWrapper = styled.div`
     left: 0;
   }
 `;
-export {HomeWrapper};
+export { HomeWrapper };

@@ -18,4 +18,4 @@ const BaseToolWrapper = styled.div`
   }
 `;
 
-export {BaseToolWrapper};
+export { BaseToolWrapper };

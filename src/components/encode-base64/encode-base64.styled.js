@@ -46,7 +46,7 @@ const EncodeBase64Wrapper = styled.div`
         top: 0;
         right: 0;
         padding: 6px 8px 6px 6px;
-        font-family: "iconfont";
+        font-family: 'iconfont';
         user-select: none;
         cursor: pointer;
       }
@@ -105,6 +105,4 @@ const EncodeBase64Wrapper = styled.div`
   }
 `;
 
-export {
-  EncodeBase64Wrapper,
-};
+export { EncodeBase64Wrapper };
